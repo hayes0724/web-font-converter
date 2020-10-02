@@ -33,9 +33,9 @@ convertAllFonts({
 convertFont({})
 ```
 ### Convert Font
-Converts a single font, uses file extension to determine conversion 
+Converts a single font, uses file extension to determine conversion.
 ```javascript
-const { convertFont } = require('../src/index')
+const { convertFont } = require('@hayes0724/web-font-converter')
 
 // This will convert the font from ttf to woff and place font in output folder
 convertFont(`./fonts/input/Roboto-Regular.ttf`, `./fonts/output/Roboto-Regular.woff`)
@@ -44,16 +44,20 @@ convertFont(`./Roboto-Regular.svg`, `./Roboto-Regular.woff2`)
 ```
 
 ### Fonts
-Convert a single font from one format to another
+Convert a single font from one format to another. This is used by `convertFont` and `convertAllFonts`, it's useful for creating your own 
+scripts for processing.
 ```javascript
-const fonts = require('../src/lib/fonts')
+const fonts = require('@hayes0724/web-font-converter/src/lib/fonts')
 
 // fonts[inputKey].convert[outputKey](inputFile, outputFile)
 fonts.ttf.convert.woff2('myfile.ttf', 'myfont.woff2')
 ```
 
 ## CLI 
-Work in progress
+Converts a single font, uses file extension to determine conversion.
+```shell script
+font-convert --pathIn='./fonts/Roboto-Regular.ttf' --pathOut='./fonts/Roboto-Regular.woff'
+```
 
 ## Options
 | Option | Description | Default

@@ -1,11 +1,11 @@
 {
   "name": "@hayes0724/web-font-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "author": "eric hayes <eric@hayesmarketing.io>",
   "bin": {
-    "font-convert": "src/cli/index.js"
+    "font-convert": "./src/cli/index.js"
   },
   "keywords": [
     "ttf2woff",

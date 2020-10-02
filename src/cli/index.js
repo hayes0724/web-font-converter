@@ -3,7 +3,18 @@
 const minimist = require('minimist');
 const args = minimist(process.argv.slice(2));
 const chalk = require('chalk');
-const version = require('../../package.json').version;
 const { convertFont } = require('../index')
 
-convertFont(args.fileIn, args.fileOut)
+if (!args.pathIn) {
+    console.error(chalk.redBright("--pathIn is required"))
+    process.exit(1)
+}
+
+if (!args.pathOut) {
+    console.error(chalk.redBright("--pathOut is required"))
+    process.exit(1)
+}
+
+console.log(chalk.green('Starting conversion...'))
+
+convertFont(args.pathIn, args.pathOut)
