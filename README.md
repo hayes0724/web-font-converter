@@ -2,6 +2,13 @@
 Convert font files to different formats. 
 Primarily used for creating woff/woff2 files for use on the web.
 
+1. [Formats](#Formats)
+2. [API](#API)
+    1. [Convert All Fonts](#Convert All Fonts)
+    2. [Convert Font](#Convert Font)
+    2. [Fonts](#Fonts)
+3. [CLI](#CLI)
+
 ## Formats
 
 1. ttf -> woff
@@ -21,6 +28,7 @@ Converts all fonts that match input formats to the specified output format
 ```javascript
 const { convertAllFonts } = require('@hayes0724/web-font-converter')
 
+// This will convert all ttf fonts to both woff and woff2
 convertAllFonts({
     pathIn: './fonts',
     pathOut: './output',
@@ -29,9 +37,31 @@ convertAllFonts({
     debug: false
 })
 
+// This will convert all ttf and svg fonts to both woff and woff2
+convertAllFonts({
+    pathIn: './fonts',
+    pathOut: './output',
+    outputFormats: ['.woff', '.woff2'],
+    inputFormats: ['.ttf', '.svg'],
+    debug: false
+})
+
 // If you provide no options it will run with the defaults below
 convertFont({})
 ```
+
+| Option | Description | Default
+| --- | --- | --- |
+| pathIn | {String} Path to font folder | current directory |
+| pathOut | {String} Path to store converted fonts | current directory |
+| outputFormats | {Array} Font types to convert to | ['.woff', '.woff2'] |
+| inputFormats | {Array} Font type to convert from | ['.ttf'] |
+| debug | {Boolean} extra output | false |
+
+Input Formats: otf, svg, ttf
+
+Output Formats: svg, ttf, woff, woff2
+
 ### Convert Font
 Converts a single font, uses file extension to determine conversion.
 ```javascript
@@ -59,15 +89,12 @@ Converts a single font, uses file extension to determine conversion.
 font-convert --pathIn='./fonts/Roboto-Regular.ttf' --pathOut='./fonts/Roboto-Regular.woff'
 ```
 
-## Options
-| Option | Description | Default
-| --- | --- | --- |
-| pathIn | {String} Path to font folder | current directory |
-| pathOut | {String} Path to store converted fonts | current directory |
-| outputFormats | {Array} Font types to convert to | ['.woff', '.woff2'] |
-| inputFormats | {Array} Font type to convert from | ['.ttf'] |
-| debug | {Boolean} extra output | false |
+| Option | Description 
+| --- | --- |
+| `--pathIn` | {String} Input font file |
+| `--pathOut` | {String} Output font file |
 
 Input Formats: otf, svg, ttf
 
 Output Formats: svg, ttf, woff, woff2
+
