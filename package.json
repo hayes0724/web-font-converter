@@ -1,0 +1,38 @@
+{
+  "name": "@hayes0724/web-font-converter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "eric hayes <eric@hayesmarketing.io>",
+  "bin": {
+    "font-convert": "src/cli/index.js"
+  },
+  "keywords": [
+    "ttf2woff",
+    "ttf2woff2",
+    "otf2woff",
+    "otf2woff2",
+    "otf2svg",
+    "otf2ttf",
+    "svg2woff",
+    "svg2woff2"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "minimist": "^1.2.5",
+    "otf2svg": "^1.0.2",
+    "path": "^0.12.7",
+    "svg2ttf": "^5.0.0",
+    "ttf2woff": "^2.0.2",
+    "ttf2woff2": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "fs-extra": "^9.0.1",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.2"
+  }
+}
