@@ -1,8 +1,19 @@
 const fs = require("fs");
 const fsExtra = require('fs-extra')
 const fonts = require('../src/lib/fonts')
-const fileIn = './tests/fonts/Roboto-Regular'
-const fileOut = './tests/output/Roboto-Regular'
+const fileName = 'Roboto-Regular'
+const fileIn = `./tests/fonts/${fileName}`
+const fileOut = `./tests/output/${fileName}`
+
+const createOutputDirectory = () => {
+    if (!fs.existsSync('./tests/output/')){
+        fs.mkdirSync('./tests/output/');
+    }
+}
+
+beforeAll(() => {
+    createOutputDirectory()
+})
 
 afterEach(() => {
     fsExtra.emptyDirSync('./tests/output/')

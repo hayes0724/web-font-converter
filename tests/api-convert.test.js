@@ -1,10 +1,20 @@
 const fs = require("fs");
 const fsExtra = require('fs-extra')
 const { convertFont } = require('../src/index')
-const fileIn = './tests/fonts/Roboto-Regular'
-const fileOut = './tests/output/Roboto-Regular'
+const fileName = 'Roboto-Regular'
+const fileIn = `./tests/fonts/${fileName}`
+const fileOut = `./tests/output/${fileName}`
+
+const createOutputDirectory = () => {
+    if (!fs.existsSync('./tests/output/')){
+        fs.mkdirSync('./tests/output/');
+    }
+}
 
 describe('TTF input font tests', () => {
+    beforeAll(() => {
+        createOutputDirectory()
+    })
     afterAll(() => {
         fsExtra.emptyDirSync('./tests/output/')
     });
@@ -22,6 +32,9 @@ describe('TTF input font tests', () => {
 })
 
 describe('OTF input font tests', () => {
+    beforeAll(() => {
+        createOutputDirectory()
+    })
     afterEach(() => {
         fsExtra.emptyDirSync('./tests/output/')
     });
@@ -52,6 +65,9 @@ describe('OTF input font tests', () => {
 })
 
 describe('SVG input font tests', () => {
+    beforeAll(() => {
+        createOutputDirectory()
+    })
     afterEach(() => {
         fsExtra.emptyDirSync('./tests/output/')
     });
