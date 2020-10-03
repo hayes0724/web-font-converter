@@ -6,7 +6,7 @@ Primarily used for creating woff/woff2 files for use on the web.
 2. [API](#API)
     1. [Convert All Fonts](#Convert All Fonts)
     2. [Convert Font](#Convert Font)
-    2. [Fonts](#Fonts)
+    3. [Fonts](#Fonts)
 3. [CLI](#CLI)
 
 ## Formats
