@@ -1,12 +1,20 @@
 {
   "name": "@hayes0724/web-font-converter",
-  "version": "1.0.2",
-  "main": "index.js",
+  "version": "1.0.4",
+  "main": "src/index.js",
   "license": "MIT",
   "author": "eric hayes <eric@hayesmarketing.io>",
   "bin": {
     "font-convert": "./src/cli/index.js"
   },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hayes0724/web-font-converter.git"
+  },
+  "homepage": "https://github.com/hayes0724/web-font-converter",
   "keywords": [
     "ttf2woff",
     "ttf2woff2",

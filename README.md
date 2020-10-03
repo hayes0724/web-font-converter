@@ -1,13 +1,32 @@
 # Web Font Converter
+![npm (scoped)](https://img.shields.io/npm/v/@hayes0724/web-font-converter)
+![build](https://github.com/hayes0724/web-font-converter/workflows/Node.js%20CI/badge.svg?branch=master)
+![node-current (scoped)](https://img.shields.io/node/v/@hayes0724/web-font-converter)
+[![GitHub issues](https://img.shields.io/github/issues/hayes0724/web-font-converter.svg)](https://GitHub.com/hayes0724/web-font-converter/issues/)
+[![GitHub license](https://img.shields.io/github/license/hayes0724/web-font-converter.svg)](https://github.com/hayes0724/web-font-converter/blob/master/LICENSE)
+
 Convert font files to different formats. 
 Primarily used for creating woff/woff2 files for use on the web.
 
-1. [Formats](#Formats)
-2. [API](#API)
+## Table of Contents
+1. [Install](#Install)
+2. [Formats](#Formats)
+3. [API](#API)
     1. [Convert All Fonts](#Convert All Fonts)
     2. [Convert Font](#Convert Font)
     3. [Fonts](#Fonts)
-3. [CLI](#CLI)
+4. [CLI](#CLI)
+
+## Install
+Install with npm:
+```shell script
+npm install --save-dev @hayes0724/web-font-converter
+```
+Install with yarn:
+```shell script
+yarn add @hayes0724/web-font-converter --dev
+```
+
 
 ## Formats
 
