@@ -11,13 +11,15 @@ const createOutputDirectory = () => {
     }
 }
 
+beforeAll(() => {
+    createOutputDirectory()
+})
+
+afterEach(() => {
+    fsExtra.emptyDirSync('./tests/output/')
+});
+
 describe('TTF input font tests', () => {
-    beforeAll(() => {
-        createOutputDirectory()
-    })
-    afterAll(() => {
-        fsExtra.emptyDirSync('./tests/output/')
-    });
     test('convert ttf to woff', () => {
         convertFont(`${fileIn}.ttf`, `${fileOut}.woff`)
         const size = fs.statSync(`${fileOut}.woff`).size
@@ -32,12 +34,6 @@ describe('TTF input font tests', () => {
 })
 
 describe('OTF input font tests', () => {
-    beforeAll(() => {
-        createOutputDirectory()
-    })
-    afterEach(() => {
-        fsExtra.emptyDirSync('./tests/output/')
-    });
     test('convert otf to woff', () => {
         convertFont(`${fileIn}.otf`, `${fileOut}.woff`)
         const size = fs.statSync(`${fileOut}.woff`).size
@@ -47,8 +43,8 @@ describe('OTF input font tests', () => {
     test('convert otf to woff2', () => {
         convertFont(`${fileIn}.otf`, `${fileOut}.woff2`)
         const size = fs.statSync(`${fileOut}.woff2`).size
-        expect(size).toBeGreaterThanOrEqual(35050);
-        expect(size).toBeLessThanOrEqual(35150);
+        expect(size).toBeGreaterThanOrEqual(35000);
+        expect(size).toBeLessThanOrEqual(35300);
     });
 
     test('convert otf to ttf', () => {
@@ -65,12 +61,6 @@ describe('OTF input font tests', () => {
 })
 
 describe('SVG input font tests', () => {
-    beforeAll(() => {
-        createOutputDirectory()
-    })
-    afterEach(() => {
-        fsExtra.emptyDirSync('./tests/output/')
-    });
     test('convert svg to ttf', () => {
         convertFont(`${fileIn}.svg`, `${fileOut}.ttf`)
         const size = fs.statSync(`${fileOut}.ttf`).size
@@ -87,6 +77,6 @@ describe('SVG input font tests', () => {
         convertFont(`${fileIn}.svg`, `${fileOut}.woff2`)
         const size = fs.statSync(`${fileOut}.woff2`).size
         expect(size).toBeGreaterThanOrEqual(35000);
-        expect(size).toBeLessThanOrEqual(35200);
+        expect(size).toBeLessThanOrEqual(35300);
     });
 })

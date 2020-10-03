@@ -43,8 +43,8 @@ describe('OTF input font tests', () => {
     test('convert otf to woff2', () => {
         fonts.otf.convert.woff2(`${fileIn}.otf`, `${fileOut}.woff2`)
         const size = fs.statSync(`${fileOut}.woff2`).size
-        expect(size).toBeGreaterThanOrEqual(35050);
-        expect(size).toBeLessThanOrEqual(35150);
+        expect(size).toBeGreaterThanOrEqual(35000);
+        expect(size).toBeLessThanOrEqual(35300);
     });
 
     test('convert otf to ttf', () => {
@@ -77,6 +77,6 @@ describe('SVG input font tests', () => {
         fonts.svg.convert.woff2(`${fileIn}.svg`, `${fileOut}.woff2`)
         const size = fs.statSync(`${fileOut}.woff2`).size
         expect(size).toBeGreaterThanOrEqual(35000);
-        expect(size).toBeLessThanOrEqual(35200);
+        expect(size).toBeLessThanOrEqual(35300);
     });
 })
